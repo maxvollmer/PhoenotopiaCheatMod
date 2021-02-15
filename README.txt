@@ -2,6 +2,10 @@
 =========================
 Author: Max Vollmer
 
+Web: https://www.nexusmods.com/phoenotopiaawakening/mods/2
+Source code: https://www.github.com/maxvollmer/PhoenotopiaCheatMod
+
+
 This is a Mod for the game "Phoenotopia Awakening" available on Steam.
 
 The mod adds several options for cheating. Can be used for development, testing, experiments, or a more casual game experience.
@@ -34,9 +38,6 @@ Allows placing enemy NPCs in the current map.
 Audio Player:
 Allows playback of any ingame sound effect and song. Displays the name of the song that currently plays.
 
-
-Web: https://www.nexusmods.com/phoenotopiaawakening/mods/2
-Source code: https://www.github.com/maxvollmer/PhoenotopiaCheatMod
 
 This is an early release and might have bugs. Use at your own risk.
 Please post questions and bug reports on nexusmods. I rarely check github.
