@@ -1,0 +1,12 @@
+﻿{
+  "Id": "PhoenotopiaCheatMod",
+  "DisplayName": "PhoenotopiaCheatMod",
+  "Author": "Max Vollmer",
+  "Version": "0.0.1-alpha",
+  "ManagerVersion": "0.22.15",
+  "GameVersion": "1.0.0",
+  "AssemblyName": "PhoenotopiaCheatMod.dll",
+  "EntryMethod": "PhoenotopiaCheatMod.MainEntry.Load",
+  "HomePage": "https://www.nexusmods.com/phoenotopiaawakening/mods/2",
+  "Repository": "https://www.github.com/maxvollmer/PhoenotopiaCheatMod"
+}

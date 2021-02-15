@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D4EDC5B-9BA2-41A7-8D56-FFCE0B71C834}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PhoenotopiaCheatMod</RootNamespace>
+    <AssemblyName>PhoenotopiaCheatMod</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\UnityModManager\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\Rewired_Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityModManager">
+      <HintPath>E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\PhoenotopiaAwakening_Data\Managed\UnityModManager\UnityModManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PhoenotopiaCheatMod\CheatMenu\AudioPlayer.cs" />
+    <Compile Include="PhoenotopiaCheatMod\CheatMenu\CheatsMenu.cs" />
+    <Compile Include="PhoenotopiaCheatMod\CheatMenu\MapPortal.cs" />
+    <Compile Include="PhoenotopiaCheatMod\CheatMenu\EnemySpawner.cs" />
+    <Compile Include="PhoenotopiaCheatMod\CheatMenu\ItemSpawner.cs" />
+    <Compile Include="PhoenotopiaCheatMod\CheatMenu\MainModMenu.cs" />
+    <Compile Include="PhoenotopiaCheatMod\CheatMenu\RowThingy.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Data\Data.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\CheatsEnforcer.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\MenuStateDetector.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\MoneyHelper.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\EnemyHelper.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\MouseHelper.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\SpriteHelper.cs" />
+    <Compile Include="PhoenotopiaCheatMod\MainEntry.cs" />
+    <Compile Include="PhoenotopiaCheatMod\ModSettings\ModSettings.cs" />
+    <Compile Include="PhoenotopiaCheatMod\ModSettings\ShowMapOption.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Patches\CheatsPatch.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Patches\ControlAdapterPatch.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Patches\SoundGeneratorPatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Info.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo y | del "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod\*.*"
+xcopy "$(ProjectDir)\bin\Debug\PhoenotopiaCheatMod.dll" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
+xcopy "$(ProjectDir)\bin\Debug\Info.json" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
+xcopy "$(ProjectDir)\bin\Debug\README.txt" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>
