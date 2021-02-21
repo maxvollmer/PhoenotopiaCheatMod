@@ -19,7 +19,7 @@ namespace PhoenotopiaCheatMod.CheatMenu
                 GUILayout.BeginVertical(new GUIStyle() { padding = new RectOffset(25, 25, 25, 25) });
                 GUILayout.Label("You need to be in a game to use cheats.", UnityModManager.UI.h1);
                 GUILayout.EndVertical();
-                return;
+                //return;
             }
 
             MainModMenu.Transparent = false;
@@ -50,8 +50,6 @@ namespace PhoenotopiaCheatMod.CheatMenu
 
             DrawInputSetting("Inventory Size", ref PT2.save_file.SLOTS_MAX, 8, 64);
 
-           // DrawInputSetting("Weapon Speed Multiplier", ref MainEntry.Settings.WeaponSpeedMultiplier, 1);
-
             GUILayout.Space(20);
 
             GUILayout.Label("Proper Cheats", UnityModManager.UI.h2, GUILayout.ExpandWidth(false));
@@ -67,15 +65,17 @@ namespace PhoenotopiaCheatMod.CheatMenu
 
             MainEntry.Settings.InfiniteMoney = DrawToggleSetting("Infinite Money", MainEntry.Settings.InfiniteMoney);
             MainEntry.Settings.InfiniteStamina = DrawToggleSetting("Infinite Stamina", MainEntry.Settings.InfiniteStamina);
-            MainEntry.Settings.InstantCook = DrawToggleSetting("Instant Cook", MainEntry.Settings.InstantCook);
-            // MainEntry.Settings.InstantKill = DrawToggleSetting("Instant Kill", MainEntry.Settings.InstantKill);
-            // MainEntry.Settings.InstantBreakObjects = DrawToggleSetting("Instant Break Objects", MainEntry.Settings.InstantBreakObjects);
-            // MainEntry.Settings.AutoAim = DrawToggleSetting("Auto Aim", MainEntry.Settings.AutoAim);
 
             GUILayout.Space(20);
 
             MainEntry.Settings.AlwaysChargeAttack = DrawToggleSetting("Always Charge Attack", MainEntry.Settings.AlwaysChargeAttack);
-            MainEntry.Settings.DisableWorldMapFoes = DrawToggleSetting("Disable world map foes", MainEntry.Settings.DisableWorldMapFoes);
+            MainEntry.Settings.InstantCook = DrawToggleSetting("Instant Cook", MainEntry.Settings.InstantCook);
+            MainEntry.Settings.AutoFlute = DrawToggleSetting("Auto Play Correct Songs With Flute", MainEntry.Settings.AutoFlute);
+
+            GUILayout.Space(20);
+
+            MainEntry.Settings.DisableWorldMapFoes = DrawToggleSetting("Disable World Map Foes", MainEntry.Settings.DisableWorldMapFoes);
+            MainEntry.Settings.AlwaysShowMapLocations = DrawToggleSetting("Always Show Map Locations", MainEntry.Settings.AlwaysShowMapLocations);
             // MainEntry.Settings.DisableEnemySpawns = DrawToggleSetting("Disable enemy spawns*", MainEntry.Settings.DisableEnemySpawns);
             // GUILayout.Label("*Enemies that are necessary to progress in the story will still spawn. This includes most bosses.", GUILayout.ExpandWidth(false));
 
@@ -317,74 +317,5 @@ namespace PhoenotopiaCheatMod.CheatMenu
             GUILayout.Space(10);
             return value;
         }
-
     }
-
-    /*
-    * cheats:
-      - set health
-      - set money
-
-      - invincible
-      - fly
-      - noclip
-      - weapon speed multiplier
-      - set max health
-      - set inventory size
-      - instant cook
-      - instant kill enemies
-      - instant break crates
-      - infinite money
-
-    PT2.save_file.DEBUG_MoneySetDirect(limited to 999, but steal code from there)
-
-    invincible:
-    GaleLogicOne.ReceiveAttackResult
-    GaleLogicOne._DEBUG_IS_INVINCIBLE
-    GaleLogicOne.SendGaleCommand(GALE_CMD.TOGGLE_GOD_MODE)
-    PT2.gale_script.SendGaleCommand(GALE_CMD.TOGGLE_GOD_MODE);
-
-
-    AquaFoeLogic
-    BoarLogic
-    BorgLogic
-    BowKnightLogic
-    CrawlerLogic
-    DrakeLogic
-    FishLogic
-    GreatMotherLogic
-    GreenToadLogic
-    HarpyLogic
-    JointCritterLogic
-    KoboldLogic
-    ManEaterLogic
-    MatriarchLogic
-    MegalithLogic
-    MineLogic
-    NestLogic
-    NinjaLogic
-    P1BossDrakeLogic
-    P1BossKobold2Logic
-    P1BossKoboldLogic
-    P1BossToadLogic
-    P1CohortLogic
-    P1KoboldShipLogic
-    PhalanxLogic
-    QueenBugLogic
-    RobotFlyerLogic
-    ShadowLogic
-    SlimeBossLogic
-    SlimeLogic
-    SpearKnightLogic
-    StealerBirdLogic
-    SuperCompLogic
-    TesterLogic
-    TrollLogic
-    TurretGunLogic
-    VarmintLogic
-    VikingLogic
-    WendigoLogic
-    WreckerLogic
-    ZombotLogic
-    */
 }

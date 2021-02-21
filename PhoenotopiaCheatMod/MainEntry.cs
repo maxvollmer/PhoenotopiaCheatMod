@@ -11,7 +11,7 @@ namespace PhoenotopiaCheatMod
     {
         private static Harmony harmonyInstance;
         public static UnityModManager.ModEntry Mod { get; private set; }
-        public static ModSettings.ModSettings Settings { get; private set; } = new ModSettings.ModSettings();
+        public static ModSettings.ModSettings Settings { get; private set; } = null;
 
         public static bool Load(UnityModManager.ModEntry modEntry)
         {
@@ -42,6 +42,7 @@ namespace PhoenotopiaCheatMod
                 Settings.Save(modEntry);
                 MainModMenu.Transparent = false;
                 EnemySpawner.IsPlacingEnemy = false;
+                MapLocationDisplayer.DestroyTexts();
             }
 
             return true;
@@ -109,6 +110,7 @@ namespace PhoenotopiaCheatMod
             }
 
             CheatsEnforcer.EnforceCheats();
+            MapLocationDisplayer.Update();
         }
 
         private static void OnLateUpdate(UnityModManager.ModEntry modEntry, float time)

@@ -31,8 +31,11 @@ namespace PhoenotopiaCheatMod.ModSettings
         public bool InfiniteMoney { get; set; } = false;
         public bool InfiniteStamina { get; set; } = false;
         public bool InstantCook { get; set; } = false;
+        public bool AutoFlute { get; set; } = false;
         public bool AlwaysChargeAttack { get; set; } = false;
+
         public bool DisableWorldMapFoes { get; set; } = false;
+        public bool AlwaysShowMapLocations { get; set; } = false;
 
         public void OnChange()
         {

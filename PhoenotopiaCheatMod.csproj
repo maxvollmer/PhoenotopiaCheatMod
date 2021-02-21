@@ -84,6 +84,7 @@
     <Compile Include="PhoenotopiaCheatMod\CheatMenu\RowThingy.cs" />
     <Compile Include="PhoenotopiaCheatMod\Data\Data.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\CheatsEnforcer.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\MapLocationDisplayer.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\MenuStateDetector.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\MoneyHelper.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\EnemyHelper.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="PhoenotopiaCheatMod\ModSettings\ShowMapOption.cs" />
     <Compile Include="PhoenotopiaCheatMod\Patches\CheatsPatch.cs" />
     <Compile Include="PhoenotopiaCheatMod\Patches\ControlAdapterPatch.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Patches\FlutePlayPatch.cs" />
     <Compile Include="PhoenotopiaCheatMod\Patches\SoundGeneratorPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,9 +110,9 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>echo y | del "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod\*.*"
-xcopy "$(ProjectDir)\bin\Debug\PhoenotopiaCheatMod.dll" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
-xcopy "$(ProjectDir)\bin\Debug\Info.json" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
-xcopy "$(ProjectDir)\bin\Debug\README.txt" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
+xcopy "$(ProjectDir)\bin\$(Configuration)\PhoenotopiaCheatMod.dll" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
+xcopy "$(ProjectDir)\bin\$(Configuration)\Info.json" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
+xcopy "$(ProjectDir)\bin\$(Configuration)\README.txt" "E:\Spiele\Steam\steamapps\common\Phoenotopia Awakening\Mods\PhoenotopiaCheatMod" /Y /I
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

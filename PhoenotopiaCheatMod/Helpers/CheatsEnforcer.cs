@@ -13,6 +13,8 @@ namespace PhoenotopiaCheatMod.Helpers
 
         public static void EnforceCheats()
         {
+            PT2.save_file.MarkBool(PT2.save_file.TranslateSaveIndex("USING_CHEAT_MODS"), true);
+
             if (!MenuStateDetector.IsInMainMenu() && !string.IsNullOrEmpty(LevelBuildLogic.level_name))
             {
                 MainEntry.Settings.VisitedMaps.Add(LevelBuildLogic.level_name);
