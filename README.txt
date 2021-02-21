@@ -1,4 +1,4 @@
-"Phoenotopia Cheat Mod"
+"Phoenotopia Cheat Mod" v0.0.2-alpha
 =========================
 Author: Max Vollmer
 
@@ -21,6 +21,11 @@ Then go to "Mods" => "Install Mod" and select the PhoenotopiaCheatMod.zip file.
 How to Use:
 While in game you can open the mod menu using Ctrl+F11. You can change the key binding in the mod settings.
 The mod menu has several tabs, further explained below.
+
+
+Changelog:
+0.0.2-alpha: Added 2 new cheats: "Auto-play flute songs" and "always show map locations".
+0.0.1-alpha: First release.
 
 
 Cheats:
