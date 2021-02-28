@@ -1,4 +1,4 @@
-"Phoenotopia Cheat Mod" v0.0.2-alpha
+"Phoenotopia Cheat Mod" v0.0.3-alpha
 =========================
 Author: Max Vollmer
 
@@ -24,7 +24,14 @@ The mod menu has several tabs, further explained below.
 
 
 Changelog:
-0.0.2-alpha: Added 2 new cheats: "Auto-play flute songs" and "always show map locations".
+0.0.3-alpha: Added more cheats:
+ * Automatic fishing
+ * Automatic sprinting
+ * Automatic roll after fall
+ * Infinite stack size in inventory
+0.0.2-alpha: Added 2 new cheats:
+ * Auto-play flute songs
+ * Always show map locations
 0.0.1-alpha: First release.
 
 

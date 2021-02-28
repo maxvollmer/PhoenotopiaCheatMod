@@ -1,5 +1,8 @@
 ﻿
 using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PhoenotopiaCheatMod.Helpers
@@ -10,6 +13,8 @@ namespace PhoenotopiaCheatMod.Helpers
         private static Vector3 NoclipPosition { get; set; } = Vector3.zero;
         private static string NoclipLastLevel = null;
         private static bool IsNoclipping = false;
+
+        private static List<ItemGridLogic.ItemOrToolDef> itemsWithNormalStackSizeBackup = new List<ItemGridLogic.ItemOrToolDef>();
 
         public static void EnforceCheats()
         {
@@ -31,6 +36,51 @@ namespace PhoenotopiaCheatMod.Helpers
             if (MainEntry.Settings.InfiniteStamina)
             {
                 PT2.gale_interacter.stats.stamina = PT2.gale_interacter.stats.max_stamina;
+            }
+            if (MainEntry.Settings.AutoRollAfterFall)
+            {
+                PT2.director.control.num_frames_since_last_SPRINT_PRESSED = 0;
+            }
+            if (MainEntry.Settings.InfiniteStack)
+            {
+                if (itemsWithNormalStackSizeBackup.Count == 0)
+                {
+                    itemsWithNormalStackSizeBackup = DB.ITEM_DEFS.ToList();
+                    for (int i = 0; i < DB.ITEM_DEFS.Length; i++)
+                    {
+                        DB.ITEM_DEFS[i].hold_limit = int.MaxValue;
+                    }
+                }
+            }
+            else
+            {
+                if (itemsWithNormalStackSizeBackup.Count > 0)
+                {
+                    for (int i = 0; i < DB.ITEM_DEFS.Length; i++)
+                    {
+                        DB.ITEM_DEFS[i].hold_limit = itemsWithNormalStackSizeBackup[i].hold_limit;
+                    }
+                    itemsWithNormalStackSizeBackup.Clear();
+
+                    int[] itemIDs = Traverse.Create(PT2.save_file).Field("_item_IDs").GetValue<int[]>();
+                    int[] itemCounts = Traverse.Create(PT2.save_file).Field("_item_ID_count").GetValue<int[]>();
+
+                    for (int i = 0; i < itemIDs.Length && i < itemCounts.Length; i++)
+                    {
+                        itemCounts[i] = Math.Min(itemCounts[i], DB.ITEM_DEFS[itemIDs[i]].hold_limit);
+                    }
+                }
+            }
+
+            if (MainEntry.Settings.ImproveSprint)
+            {
+                if (PT2.director.control.SPRINT_HELD
+                    && !PT2.director.control.SPRINT_PRESSED
+                    && gale.QueryStatus(GALE_QUERY_STATUS.CAN_SHOW_INTERACT_SIGNS)
+                    && !gale.QueryStatus(GALE_QUERY_STATUS.IN_MAP_MODE))
+                {
+                    PT2.director.control.SPRINT_PRESSED = true;
+                }
             }
 
             var rigidBody = Traverse.Create(gale).Field("_rb").GetValue<Rigidbody2D>();
@@ -114,6 +164,18 @@ namespace PhoenotopiaCheatMod.Helpers
             if (IsNoclipping)
             {
                 gale.transform.position = NoclipPosition;
+            }
+        }
+
+        public static int GetItemHoldLimit(int id)
+        {
+            if (itemsWithNormalStackSizeBackup.Count > 0)
+            {
+                return itemsWithNormalStackSizeBackup[id].hold_limit;
+            }
+            else
+            {
+                return DB.ITEM_DEFS[id].hold_limit;
             }
         }
 

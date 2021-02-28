@@ -32,8 +32,8 @@ namespace PhoenotopiaCheatMod.PhoenotopiaCheatMod.Patches
             if (Traverse.Create(gale).Field("_is_sprinting").GetValue<bool>())
                 return true;
 
-            int desired_song = GetDesiredSong(gale);
-            if (desired_song < 0)
+            string desired_song = GetDesiredSong(gale);
+            if (desired_song == null)
                 return true;
 
             var javelinOrGunMovementMethod = typeof(GaleLogicOne).GetMethod("_JavelinOrGunMovement", BindingFlags.NonPublic | BindingFlags.Instance, null, new System.Type[0], null);
@@ -93,9 +93,8 @@ namespace PhoenotopiaCheatMod.PhoenotopiaCheatMod.Patches
             }
         }
 
-        private static char GetNextNote(GaleLogicOne gale, int desired_song)
+        private static char GetNextNote(GaleLogicOne gale, string song)
         {
-            var song = Traverse.Create(gale).Field("_songs_library").GetValue<string[]>()[desired_song];
             var curr_song = Traverse.Create(gale).Field("_curr_song").GetValue<string>();
 
             for (int i = 1; i < song.Length; i++)
@@ -109,11 +108,11 @@ namespace PhoenotopiaCheatMod.PhoenotopiaCheatMod.Patches
             return song[0];
         }
 
-        private static int GetDesiredSong(GaleLogicOne gale)
+        private static string GetDesiredSong(GaleLogicOne gale)
         {
             var colliders = Physics2D.OverlapPointAll(gale.transform.position, GL.mask_SongField);
 
-            if (colliders!= null && colliders.Length > 0)
+            if (colliders != null && colliders.Length > 0)
             {
                 var songs_library = Traverse.Create(gale).Field("_songs_library").GetValue<string[]>();
 
@@ -122,12 +121,17 @@ namespace PhoenotopiaCheatMod.PhoenotopiaCheatMod.Patches
                     var desired_song = Traverse.Create(aiZone).Field("_desired_song").GetValue<int>();
                     if (desired_song >= 0 && desired_song < songs_library.Length)
                     {
-                        return desired_song;
+                        return songs_library[desired_song];
+                    }
+
+                    if (aiZone.free_form_song != null)
+                    {
+                        return aiZone.free_form_song;
                     }
                 }
             }
 
-            return -1;
+            return null;
         }
     }
 }

@@ -84,6 +84,7 @@
     <Compile Include="PhoenotopiaCheatMod\CheatMenu\RowThingy.cs" />
     <Compile Include="PhoenotopiaCheatMod\Data\Data.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\CheatsEnforcer.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Helpers\GailPositionHelper.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\MapLocationDisplayer.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\MenuStateDetector.cs" />
     <Compile Include="PhoenotopiaCheatMod\Helpers\MoneyHelper.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="PhoenotopiaCheatMod\ModSettings\ShowMapOption.cs" />
     <Compile Include="PhoenotopiaCheatMod\Patches\CheatsPatch.cs" />
     <Compile Include="PhoenotopiaCheatMod\Patches\ControlAdapterPatch.cs" />
+    <Compile Include="PhoenotopiaCheatMod\Patches\FishingPatch.cs" />
     <Compile Include="PhoenotopiaCheatMod\Patches\FlutePlayPatch.cs" />
     <Compile Include="PhoenotopiaCheatMod\Patches\SoundGeneratorPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

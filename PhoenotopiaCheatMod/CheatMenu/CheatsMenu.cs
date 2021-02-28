@@ -65,12 +65,16 @@ namespace PhoenotopiaCheatMod.CheatMenu
 
             MainEntry.Settings.InfiniteMoney = DrawToggleSetting("Infinite Money", MainEntry.Settings.InfiniteMoney);
             MainEntry.Settings.InfiniteStamina = DrawToggleSetting("Infinite Stamina", MainEntry.Settings.InfiniteStamina);
+            MainEntry.Settings.InfiniteStack = DrawToggleSetting("Infinite Inventory Stack Size", MainEntry.Settings.InfiniteStack);
 
             GUILayout.Space(20);
 
             MainEntry.Settings.AlwaysChargeAttack = DrawToggleSetting("Always Charge Attack", MainEntry.Settings.AlwaysChargeAttack);
             MainEntry.Settings.InstantCook = DrawToggleSetting("Instant Cook", MainEntry.Settings.InstantCook);
+            MainEntry.Settings.AutoFish = DrawToggleSetting("Auto Fish", MainEntry.Settings.AutoFish);
             MainEntry.Settings.AutoFlute = DrawToggleSetting("Auto Play Correct Songs With Flute", MainEntry.Settings.AutoFlute);
+            MainEntry.Settings.AutoRollAfterFall = DrawToggleSetting("Auto Roll After Fall", MainEntry.Settings.AutoRollAfterFall);
+            MainEntry.Settings.ImproveSprint = DrawToggleSetting("Improve Sprint Behavior", MainEntry.Settings.ImproveSprint);
 
             GUILayout.Space(20);
 

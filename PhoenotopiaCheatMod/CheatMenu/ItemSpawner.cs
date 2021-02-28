@@ -130,7 +130,7 @@ namespace PhoenotopiaCheatMod.CheatMenu
                 }
                 else if (Input.GetMouseButtonDown(1))
                 {
-                    SpawnItem(id, Math.Max(1, itemDef.hold_limit));
+                    SpawnItem(id, Math.Max(1, CheatsEnforcer.GetItemHoldLimit(id)));
                 }
             }
 
